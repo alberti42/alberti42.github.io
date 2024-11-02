@@ -9,21 +9,21 @@ title: "Projects"
 {% assign sorted_obsidian_plugins = site.obsidian_plugins | sort: 'title' %}
 {% assign sorted_macos_utils = site.macos_utils | sort: 'ranking' %}
 
-You find below a list of projects I have been currently maintaining.
+Welcome to the personal Andrea's personal page. Below, you find a list of projects I have been currently maintaining in my past time.
 
 ## Research Tools
 {% for project in site.research_tools %}
-- **[{{ project.title }}]({{ project.url }})**: {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
 
 ## Obsidian Plugins
 {% for project in sorted_obsidian_plugins %}
-- **[{{ project.title }}]({{ project.url }})**: {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
 
 ## macOS Utilities
 {% for project in sorted_macos_utils %}
-- **[{{ project.title }}]({{ project.url }})**: {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
 
 
