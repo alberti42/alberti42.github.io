@@ -9,14 +9,6 @@ title: "Projects"
 {% assign sorted_obsidian_plugins = site.obsidian_plugins | sort: 'title' %}
 {% assign sorted_macos_utils = site.macos_utils | sort: 'ranking' %}
 
-## Recent Posts
-
-{% for post in site.posts %}
-- **[{{ post.title }}]({{ post.url | relative_url }})** - {{ post.date | date: "%B %d, %Y" }}
-{% endfor %}
-
----
-
 You find below a list of projects I have been currently maintaining.
 
 ## Research Tools
