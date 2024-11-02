@@ -22,8 +22,9 @@ title: Andrea's GitHub page
 email: a.alberti82@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is the GitHub page of Andrea Alberti containing collection of open-source apps.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://github.com/alberti42/" # the base hostname & protocol for your site, e.g. http://example.com
+domain: alberti42.github.io      # No "http" to enforce HTTPS
+url: https://alberti42.github.io # The full URL of your site
+baseurl: ""                      # Empty, since it's not in a subfolder
 twitter_username: DrAndreaAlberti
 github_username:  alberti42
 
