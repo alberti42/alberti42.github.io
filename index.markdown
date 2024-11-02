@@ -21,7 +21,7 @@ You find below a list of projects I have been currently maintaining.
 
 ## Research Tools
 {% for project in site.research_tools %}
-- **[{{ project.title }}]({{ project.path | relative_url }})**: {{ project.description }}
+- **[{{ project.title }}]({{ project.url }})**: {{ project.description }}
 {% endfor %}
 
 ## Obsidian Plugins
@@ -31,7 +31,7 @@ You find below a list of projects I have been currently maintaining.
 
 ## macOS Utilities
 {% for project in sorted_macos_utils %}
-- **[{{ project.title }}]({{ project.path | relative_url }})**: {{ project.description }}
+- **[{{ project.title }}]({{ project.url }})**: {{ project.description }}
 {% endfor %}
 
 
