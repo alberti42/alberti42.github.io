@@ -5,7 +5,14 @@
             "path": ".",
             "folder_exclude_patterns": ["_site", ".jekyll-cache", ".sass-cache", "node_modules"],
             "file_exclude_patterns": ["*.gem", "*.log"],
-        }
+            "folder_exclude_patterns": [
+              "_site",
+            ],
+            "file_exclude_patterns": [
+              "*.lock",
+              ".jekyll-metadata"
+            ]
+          }
     ],
     "build_systems":
     [
