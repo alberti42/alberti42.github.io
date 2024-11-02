@@ -1,0 +1,52 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": ["_site", ".jekyll-cache", ".sass-cache", "node_modules"],
+            "file_exclude_patterns": ["*.gem", "*.log"],
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Jekyll Serve",
+            "cmd": ["bundle", "exec", "jekyll", "serve", "--incremental"],
+            "working_dir": "${project_path}",
+            "shell": true,
+        },
+        {
+            "name": "Jekyll Build",
+            "cmd": ["bundle", "exec", "jekyll", "build"],
+            "working_dir": "${project_path}",
+            "shell": true,
+        },
+        {
+            "name": "Jekyll Doctor",
+            "cmd": ["bundle", "exec", "jekyll", "doctor"],
+            "working_dir": "${project_path}",
+            "shell": true,
+        }
+    ],
+    "settings":
+		{
+        "SublimeLinter.linters.eslint.disable": true, // disable eslint
+		    "tab_size": 2,
+		    "translate_tabs_to_spaces": true,
+		    "default_encoding": "UTF-8",
+		    "ensure_newline_at_eof_on_save": true,
+		},
+		"syntax_specific":
+		{
+		    "text.html": {
+		        "tab_size": 2,
+		        "translate_tabs_to_spaces": true,
+		    },
+		    "text.html.markdown": {
+		        "tab_size": 2,
+		        "translate_tabs_to_spaces": true,
+		        "extensions": ["md", "markdown"],
+		    },
+		},
+    "conda_environment": "/Users/andrea/miniforge3/",
+}
