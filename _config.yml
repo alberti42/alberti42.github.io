@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Andrea's GitHub page
+title: Andrea's Personal Page
 email: a.alberti82@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This is the GitHub page of Andrea Alberti containing collection of open-source apps.
+  This is Andrea Alberti's personal page containing collection of open-source apps I developed.
+baseurl: ""                      # Empty, since it's not in a subfolder
 domain: alberti42.github.io      # No "http" to enforce HTTPS
 url: https://alberti42.github.io # The full URL of your site
-baseurl: ""                      # Empty, since it's not in a subfolder
 twitter_username: DrAndreaAlberti
 github_username:  alberti42
 
