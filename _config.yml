@@ -42,6 +42,9 @@ collections:
   obsidian_plugins:
     output: true
     permalink: /obsidian_plugins/:path/
+  sublime_plugins:
+    output: true
+    permalink: /sublime_plugins/:path/
   macos_utils:
     output: true
     permalink: /macos_utils/:path/

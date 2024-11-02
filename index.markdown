@@ -7,6 +7,7 @@ title: "Software projects"
 
 {% assign sorted_research_tools = site.research_tools | sort: 'title' %}
 {% assign sorted_obsidian_plugins = site.obsidian_plugins | sort: 'title' %}
+{% assign sorted_sublime_plugins = site.sublime_plugins | sort: 'title' %}
 {% assign sorted_macos_utils = site.macos_utils | sort: 'ranking' %}
 
 Welcome to the personal Andrea's personal page. Below, you find a list of projects I have been currently maintaining in my past time.
@@ -21,9 +22,13 @@ Welcome to the personal Andrea's personal page. Below, you find a list of projec
 - **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
 
+## Sublime Text Editor Plugins
+{% for project in sorted_sublime_plugins %}
+- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% endfor %}
+
 ## macOS Utilities
 {% for project in sorted_macos_utils %}
 - **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
-
 
