@@ -33,6 +33,19 @@ theme: minima
 plugins:
   - jekyll-feed
 
+collections_dir: projects
+
+collections:
+  research_tools:
+    output: true
+    permalink: /scientific_tools/:path/
+  obsidian_plugins:
+    output: true
+    permalink: /obsidian_plugins/:path/
+  macos_utils:
+    output: true
+    permalink: /macos_utils/:path/
+    
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
