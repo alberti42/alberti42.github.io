@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: "Software projects"
+order: 1
 ---
 
 {% assign sorted_research_tools = site.research_tools | sort: 'title' %}
