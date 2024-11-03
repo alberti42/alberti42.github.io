@@ -11,7 +11,7 @@ order: 1
 {% assign sorted_sublime_plugins = site.sublime_plugins | sort: 'title' %}
 {% assign sorted_macos_utils = site.macos_utils | sort: 'ranking' %}
 
-Welcome to Andrea's personal page. Below, you find a list of projects I have been currently maintaining in my past time.
+Welcome to Andrea Alberti's personal page. Below, you find a list of projects I have been currently maintaining in my past time.
 
 ## Research Tools
 {% for project in site.research_tools %}
