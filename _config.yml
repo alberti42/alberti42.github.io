@@ -50,6 +50,9 @@ collections:
   sublime_plugins:
     output: true
     permalink: /sublime_plugins/:path/
+  launchbar_plugins:
+    output: true
+    permalink: /launcbhar_plugins/:path/
   macos_utils:
     output: true
     permalink: /macos_utils/:path/
