@@ -1,5 +1,5 @@
 ---
-title: Get Wolfram Mathematica Recent Documents
-description: A plugin for LaunchBar to display the list of the documents recently opened in [Wolfram Mathematica](https://www.wolfram.com/mathematica/).
-link: https://github.com/alberti42/Get-Recent-Mathematica-Documents-For-LaunchBar
+title: Get MATLAB Recent Documents
+description: A plugin for LaunchBar to display the list of the documents recently opened in [Mathworks MATLAB](https://www.mathworks.com/).
+link: https://github.com/alberti42/Get-Recent-MATLAB-Documents-For-LaunchBar
 ---
