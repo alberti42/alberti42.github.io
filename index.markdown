@@ -27,7 +27,7 @@ These are plugins developed to improve the workflow with [Obsidian](https://obsi
 - **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
  
-## LaunchBar plugins
+## LaunchBar Actions
 
 These are plugins developed to improve the workflow with [LaunchBar](https://www.obdev.at/products/launchbar/index.html) personal knowledge management system.
 
