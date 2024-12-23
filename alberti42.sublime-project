@@ -33,6 +33,12 @@
       "cmd": ["bundle", "exec", "jekyll", "doctor"],
       "working_dir": "${project_path}",
       "shell": false,
+    },
+    {
+      "name": "Ruby Bundler Version",
+      "cmd": ["bundle", "-v"],
+      "working_dir": "${project_path}",
+      "shell": false
     }
   ],
   "syntax_override": {
@@ -40,6 +46,10 @@
   },
   "settings":
   {
+        "project_environment":
+        {
+            "env_file": "./find_ruby_path.zsh"
+        },
         "SublimeLinter.linters.eslint.disable": true, // disable eslint
         "tab_size": 2,
         "translate_tabs_to_spaces": true,
@@ -58,5 +68,4 @@
           "extensions": ["md", "markdown"],
         },
       },
-      "conda_environment": "/Users/andrea/miniforge3/",
     }
