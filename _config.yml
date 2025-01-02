@@ -53,9 +53,9 @@ collections:
   launchbar_plugins:
     output: true
     permalink: /launcbhar_plugins/:path/
-  zsh_plugins:
+  shell_plugins:
     output: true
-    permalink: /zsh_plugins/:path/
+    permalink: /shell_plugins/:path/
   macos_utils:
     output: true
     permalink: /macos_utils/:path/

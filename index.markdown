@@ -11,7 +11,7 @@ order: 1
 {% assign sorted_launchbar_plugins = site.launchbar_plugins | sort: 'title' %}
 {% assign sorted_sublime_plugins = site.sublime_plugins | sort: 'title' %}
 {% assign sorted_macos_utils = site.macos_utils | sort: 'ranking' %}
-{% assign sorted_zsh_plugins = site.zsh_plugins | sort: 'title' %}
+{% assign sorted_shell_plugins = site.shell_plugins | sort: 'title' %}
 
 Welcome to Andrea Alberti's personal page. Below, you find a list of projects I have been currently maintaining in my pastime.
 
@@ -41,11 +41,11 @@ These are plugins developed to improve the workflow with [LaunchBar](https://www
 - **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
 
-## Zsh Plugins
+## Shell Plugins
 
-These are plugins developed to improve the workflow [Zsh](https://www.zsh.org/) shell.
+These are plugins developed to improve the workflow with [Zsh](https://www.zsh.org/) shell and [Tmux](https://github.com/tmux/tmux).
 
-{% for project in sorted_zsh_plugins %}
+{% for project in sorted_shell_plugins %}
 - **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
 
