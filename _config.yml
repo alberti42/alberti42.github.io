@@ -75,7 +75,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
+  - find_ruby_path.zsh
+  - alberti42.sublime-project
+  - alberti42.sublime-workspace
+  
