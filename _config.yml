@@ -47,6 +47,9 @@ collections:
   obsidian_plugins:
     output: true
     permalink: /obsidian_plugins/:path/
+  python_packages:
+    output: true
+    permalink: /python_packages/:path/
   sublime_plugins:
     output: true
     permalink: /sublime_plugins/:path/

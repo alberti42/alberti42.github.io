@@ -8,6 +8,7 @@ order: 1
 
 {% assign sorted_research_tools = site.research_tools | sort: 'title' %}
 {% assign sorted_obsidian_plugins = site.obsidian_plugins | sort: 'title' %}
+{% assign sorted_python_packages = site.python_packages | sort: 'title' %}
 {% assign sorted_launchbar_plugins = site.launchbar_plugins | sort: 'title' %}
 {% assign sorted_sublime_plugins = site.sublime_plugins | sort: 'title' %}
 {% assign sorted_macos_utils = site.macos_utils | sort: 'ranking' %}
@@ -25,6 +26,14 @@ Welcome to Andrea Alberti's personal page. Below, you find a list of projects I 
 These are plugins developed to improve the workflow with [Obsidian](https://obsidian.md/) personal knowledge management system.
 
 {% for project in sorted_obsidian_plugins %}
+- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% endfor %}
+
+## Python Packages
+
+These are Python packages developed to improve the workflow in scientific computing and scientific automation:
+
+{% for project in sorted_python_packages %}
 - **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
 {% endfor %}
  
