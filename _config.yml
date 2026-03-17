@@ -37,6 +37,7 @@ google_site_verification: it-zAVC2f-7GR_upkWlQbvv5VRM387pAsz0_O_Blaro
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 collections_dir: collections
 
