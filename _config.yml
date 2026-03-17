@@ -82,4 +82,4 @@ exclude:
   - find_ruby_path.zsh
   - alberti42.sublime-project
   - alberti42.sublime-workspace
-  
+  - "**/*.disabled"
