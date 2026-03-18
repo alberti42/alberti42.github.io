@@ -56,7 +56,7 @@ collections:
     permalink: /sublime_plugins/:path/
   launchbar_plugins:
     output: true
-    permalink: /launcbhar_plugins/:path/
+    permalink: /launchbar_plugins/:path/
   shell_plugins:
     output: true
     permalink: /shell_plugins/:path/
