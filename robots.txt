@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://alberti42.github.io/sitemap.xml
