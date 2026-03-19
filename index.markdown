@@ -16,41 +16,8 @@ order: 1
 
 Welcome to Andrea Alberti's personal page. Below, you find a list of projects I have been currently maintaining in my pastime.
 
-## Research Tools
-{% for project in sorted_research_tools %}
-{% assign repo_name = project.link | split: "/" | last %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
-{% endfor %}
-
-## Obsidian Plugins
-
-These are plugins developed to improve the workflow with [Obsidian](https://obsidian.md/) personal knowledge management system.
-
-{% for project in sorted_obsidian_plugins %}
-{% assign repo_name = project.link | split: "/" | last %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
-{% endfor %}
-
-## Python Packages
-
-These are Python packages developed to improve the workflow in scientific computing and scientific automation:
-
-{% for project in sorted_python_packages %}
-{% assign repo_name = project.link | split: "/" | last %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
-{% endfor %}
- 
-## LaunchBar Actions
-
-These are plugins developed to improve the workflow with [LaunchBar](https://www.obdev.at/products/launchbar/index.html) personal knowledge management system.
-
-{% for project in sorted_launchbar_plugins %}
-{% assign repo_name = project.link | split: "/" | last %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
-{% endfor %}
-
-## Sublime Text Editor Plugins
-{% for project in sorted_sublime_plugins %}
+## macOS Utilities
+{% for project in sorted_macos_utils %}
 {% assign repo_name = project.link | split: "/" | last %}
 - **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
@@ -64,8 +31,41 @@ These are plugins developed to improve the workflow with [Zsh](https://www.zsh.o
 - **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
-## macOS Utilities
-{% for project in sorted_macos_utils %}
+## Obsidian Plugins
+
+These are plugins developed to improve the workflow with [Obsidian](https://obsidian.md/) personal knowledge management system.
+
+{% for project in sorted_obsidian_plugins %}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+{% endfor %}
+
+## LaunchBar Actions
+
+These are plugins developed to improve the workflow with [LaunchBar](https://www.obdev.at/products/launchbar/index.html) personal knowledge management system.
+
+{% for project in sorted_launchbar_plugins %}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+{% endfor %}
+
+## Python Packages
+
+These are Python packages developed to improve the workflow in scientific computing and scientific automation:
+
+{% for project in sorted_python_packages %}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+{% endfor %}
+
+## Sublime Text Editor Plugins
+{% for project in sorted_sublime_plugins %}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+{% endfor %}
+
+## Research Tools
+{% for project in sorted_research_tools %}
 {% assign repo_name = project.link | split: "/" | last %}
 - **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
