@@ -17,8 +17,9 @@ order: 1
 Welcome to Andrea Alberti's personal page. Below, you find a list of projects I have been currently maintaining in my pastime.
 
 ## Research Tools
-{% for project in site.research_tools %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% for project in sorted_research_tools %}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Obsidian Plugins
@@ -26,7 +27,8 @@ Welcome to Andrea Alberti's personal page. Below, you find a list of projects I 
 These are plugins developed to improve the workflow with [Obsidian](https://obsidian.md/) personal knowledge management system.
 
 {% for project in sorted_obsidian_plugins %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Python Packages
@@ -34,7 +36,8 @@ These are plugins developed to improve the workflow with [Obsidian](https://obsi
 These are Python packages developed to improve the workflow in scientific computing and scientific automation:
 
 {% for project in sorted_python_packages %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
  
 ## LaunchBar Actions
@@ -42,12 +45,14 @@ These are Python packages developed to improve the workflow in scientific comput
 These are plugins developed to improve the workflow with [LaunchBar](https://www.obdev.at/products/launchbar/index.html) personal knowledge management system.
 
 {% for project in sorted_launchbar_plugins %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Sublime Text Editor Plugins
 {% for project in sorted_sublime_plugins %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Shell Plugins
@@ -55,11 +60,12 @@ These are plugins developed to improve the workflow with [LaunchBar](https://www
 These are plugins developed to improve the workflow with [Zsh](https://www.zsh.org/) shell and [Tmux](https://github.com/tmux/tmux).
 
 {% for project in sorted_shell_plugins %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## macOS Utilities
 {% for project in sorted_macos_utils %}
-- **[{{ project.title }}]({{ project.link }})**: {{ project.description }}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
-
