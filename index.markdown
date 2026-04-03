@@ -8,6 +8,7 @@ order: 1
 
 {% assign sorted_research_tools = site.research_tools | sort: 'title' %}
 {% assign sorted_obsidian_plugins = site.obsidian_plugins | sort: 'title' %}
+{% assign sorted_emacs = site.emacs | sort: 'title' %}
 {% assign sorted_python_packages = site.python_packages | sort: 'title' %}
 {% assign sorted_launchbar_plugins = site.launchbar_plugins | sort: 'title' %}
 {% assign sorted_sublime_plugins = site.sublime_plugins | sort: 'title' %}
@@ -36,6 +37,15 @@ These are plugins developed to improve the workflow with [Zsh](https://www.zsh.o
 These are plugins developed to improve the workflow with [Obsidian](https://obsidian.md/) personal knowledge management system.
 
 {% for project in sorted_obsidian_plugins %}
+{% assign repo_name = project.link | split: "/" | last %}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+{% endfor %}
+
+## Emacs Contributions
+
+These are packages and other types of contributions developed to improve the workflow with [Emacs](https://www.gnu.org/software/emacs/).
+
+{% for project in sorted_emacs %}
 {% assign repo_name = project.link | split: "/" | last %}
 - **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ site.github_username }}/{{ repo_name }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}

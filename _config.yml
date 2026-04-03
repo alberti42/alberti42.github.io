@@ -52,7 +52,10 @@ collections:
   obsidian_plugins:
     output: true
     permalink: /obsidian_plugins/:path/
-  launchbar_plugins:
+  emacs:
+    output: true
+    permalink: /emacs/:path/
+  launchbar_plugins:  
     output: true
     permalink: /launchbar_plugins/:path/
   python_packages:
