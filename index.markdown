@@ -20,7 +20,7 @@ Welcome to Andrea Alberti's personal page. Below, you find a list of projects I 
 ## macOS Utilities
 {% for project in sorted_macos_utils %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Shell Plugins
@@ -29,7 +29,7 @@ These are plugins developed to improve the workflow with [Zsh](https://www.zsh.o
 
 {% for project in sorted_shell_plugins %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Obsidian Plugins
@@ -38,7 +38,7 @@ These are plugins developed to improve the workflow with [Obsidian](https://obsi
 
 {% for project in sorted_obsidian_plugins %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Emacs Contributions
@@ -47,7 +47,7 @@ These are packages and other types of contributions developed to improve the wor
 
 {% for project in sorted_emacs %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## LaunchBar Actions
@@ -56,7 +56,7 @@ These are plugins developed to improve the workflow with [LaunchBar](https://www
 
 {% for project in sorted_launchbar_plugins %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Python Packages
@@ -65,17 +65,17 @@ These are Python packages developed to improve the workflow in scientific comput
 
 {% for project in sorted_python_packages %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Sublime Text Editor Plugins
 {% for project in sorted_sublime_plugins %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
 
 ## Research Tools
 {% for project in sorted_research_tools %}
 {% assign repo_path = project.link | remove_first: "https://github.com/" %}
-- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317)]({{ project.link }}/stargazers): {{ project.description }}
+- **[{{ project.title }}]({{ project.link }})** [![Stars](https://img.shields.io/github/stars/{{ repo_path }}?style=flat-square&label=%E2%98%85&color=dfb317&cacheSeconds=86400)]({{ project.link }}/stargazers): {{ project.description }}
 {% endfor %}
