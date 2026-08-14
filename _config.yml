@@ -85,6 +85,7 @@ exclude:
   - node_modules/
   - vendor/
   - find_ruby_path.zsh
+  - Makefile
   - alberti42.sublime-project
   - alberti42.sublime-workspace
   - "**/*.disabled"
