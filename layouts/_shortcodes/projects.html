@@ -2,8 +2,15 @@
   Renders the project catalogue from data/projects/*.yaml.
 
   Call it with the percent form -- {{% projects %}}, not {{< projects >}} --
-  so the Markdown emitted below is processed as Markdown: the "## " headings become real headings with anchor
-  links, and each project's `description` keeps its Markdown links.
+  so the "## " headings below are processed as Markdown and get real anchors
+  and a table of contents entry.
+
+  The project rows are emitted as raw HTML rather than as a Markdown list, on
+  purpose.  A Markdown image would go through Congo's render-image hook, which
+  wraps every image in a centred, block-level <figure> -- turning each star
+  badge into its own full-width line and leaving a large gap between entries.
+  Emitting the <img> directly keeps the badge inline beside the title, and
+  keeps the query string in the badge URL from being double-escaped.
 
   To add a project, edit the YAML -- never this file.  To add a whole
   category, drop in a new data/projects/NN-name.yaml; `weight` orders them.
@@ -20,9 +27,20 @@
 {{ with .intro }}
 {{ . }}
 {{ end }}
-{{- range where .items "disabled" "!=" true }}
-{{- $repo := strings.TrimPrefix "https://github.com/" .link }}
-{{- $text := .description | replaceRE `\s*\n\s*` " " }}
-- **[{{ .title }}]({{ .link }})** [![Stars on GitHub]({{ printf $badge $repo }})]({{ .link }}/stargazers): {{ $text }}
+{{ $items := where .items "disabled" "!=" true -}}
+<ul class="project-list not-prose">
+{{- range $items }}
+  {{- $repo := strings.TrimPrefix "https://github.com/" .link }}
+  {{- $text := .description | replaceRE `\s*\n\s*` " " }}
+  <li class="project">
+    <span class="project-head">
+      <a class="project-name" href="{{ .link }}">{{ .title }}</a>
+      <a class="project-stars" href="{{ .link }}/stargazers" aria-label="Stars for {{ .title }} on GitHub">
+        <img src="{{ printf $badge $repo | safeURL }}" alt="GitHub stars" loading="lazy" decoding="async">
+      </a>
+    </span>
+    <span class="project-desc">{{ $.Page.RenderString (dict "display" "inline") $text }}</span>
+  </li>
 {{- end }}
+</ul>
 {{ end -}}

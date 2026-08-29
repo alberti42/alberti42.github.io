@@ -1,16 +1,80 @@
 /* Picked up automatically by Congo's head partial, after the theme CSS. */
 
-/* Shields.io star badges sit inline with the project title, and must not
-   inherit the block-image margins that Tailwind's `prose` gives images. */
-.prose li img[src*="img.shields.io"] {
-  display: inline-block;
-  margin: 0 0 0 0.15rem;
-  vertical-align: -0.1em;
+/* ---------------------------------------------------------------------------
+   Project catalogue (/projects/)
+   ---------------------------------------------------------------------------
+   The list opts out of Tailwind `prose` with .not-prose, so none of the
+   article paragraph rhythm applies here: two lines per project, tight.
+*/
+
+.project-list {
+  list-style: none;
+  margin: 0.85rem 0 2rem;
+  padding: 0;
 }
 
-/* Build-time KaTeX emits both HTML and MathML; the stylesheet hides the
-   MathML copy, but let long display equations scroll instead of overflowing
-   on narrow screens. */
+.project + .project {
+  margin-top: 0.7rem;
+}
+
+/* Title and star badge share a baseline; wraps gracefully on narrow screens. */
+.project-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  line-height: 1.3;
+}
+
+.project-name {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-name:hover {
+  text-decoration: underline;
+}
+
+/* Congo's prose styles would give this block margins and centre it; the badge
+   has to stay inline and small, sized relative to the title next to it. */
+.project-stars {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.project-stars img {
+  display: block;
+  height: 1.15em;
+  width: auto;
+  margin: 0;
+  border-radius: 3px;
+}
+
+.project-desc {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.78;
+}
+
+.project-desc a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Category headings need a little more air above them than below, so each
+   group reads as a block rather than the heading floating between lists. */
+.prose h2 + p {
+  margin-top: 0.35rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Maths
+   --------------------------------------------------------------------------- */
+
+/* Build-time KaTeX emits both HTML and MathML; let long display equations
+   scroll instead of overflowing on narrow screens. */
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;

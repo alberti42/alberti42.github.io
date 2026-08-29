@@ -9,7 +9,7 @@ otherwise have to work out twice — how I use **Emacs** day to day, notes on
 
 - [**Emacs**](/emacs/) — configuration, packages, and workflow notes.
 - [**Quantum physics**](/physics/) — notes from research and teaching.
-- [**Projects**](/projects/) — the open-source software I maintain.
+- [**Open source**](/projects/) — small tools I write in my spare time.
 
 Each section has its own [RSS feed](/emacs/index.xml), so you can follow just
 the part you care about.
