@@ -22,8 +22,9 @@ HOMEBREW_PREFIX ?= $(shell brew --prefix 2>/dev/null || echo /opt/homebrew)
 TOOL_PATH       := $(HOMEBREW_PREFIX)/bin:$(HOME)/.local/bin:$(PATH)
 export PATH     := $(TOOL_PATH)
 
-HUGO  ?= $(shell PATH="$(TOOL_PATH)" command -v hugo  || echo hugo)
-EMACS ?= $(shell PATH="$(TOOL_PATH)" command -v emacs || echo emacs)
+HUGO        ?= $(shell PATH="$(TOOL_PATH)" command -v hugo        || echo hugo)
+EMACS       ?= $(shell PATH="$(TOOL_PATH)" command -v emacs       || echo emacs)
+EMACSCLIENT ?= $(shell PATH="$(TOOL_PATH)" command -v emacsclient || echo emacsclient)
 
 # Hugo and Org both read UTF-8 sources.
 export LC_ALL ?= en_US.UTF-8
@@ -35,8 +36,8 @@ PORT ?= 1313
 ORG_SOURCES := $(shell find content-org -name '*.org' 2>/dev/null)
 
 .DEFAULT_GOAL := help
-.PHONY: help export new-post serve serve-drafts build build-prod theme-update \
-        check clean distclean open info
+.PHONY: help export new-post edit serve serve-drafts build build-prod \
+        theme-update check clean distclean open info
 
 help: ## Show this help
 	@echo "Targets (make <target>):"
@@ -60,6 +61,21 @@ new-post: ## Scaffold a post: make new-post SECTION=emacs SLUG=my-post
 	     -e 's|@SLUG@|$(SLUG)|g' \
 	     archetypes/post.org > content-org/$(SECTION)/$(SLUG).org
 	@echo "created content-org/$(SECTION)/$(SLUG).org"
+	@$(MAKE) --no-print-directory edit FILE=content-org/$(SECTION)/$(SLUG).org
+
+edit: ## Open FILE in the running Emacs daemon (no-op if none); NO_OPEN=1 skips
+	@test -n "$(FILE)" || { echo "usage: make edit FILE=path"; exit 1; }
+	@if [ -n "$(NO_OPEN)" ]; then \
+	  exit 0; \
+	elif ! command -v $(EMACSCLIENT) >/dev/null 2>&1; then \
+	  echo "  (emacsclient not found -- open it yourself)"; \
+	elif ! $(EMACSCLIENT) -e t >/dev/null 2>&1; then \
+	  echo "  (no Emacs daemon running -- open it yourself)"; \
+	elif [ "$$($(EMACSCLIENT) -e '(length (visible-frame-list))' 2>/dev/null)" = "0" ]; then \
+	  $(EMACSCLIENT) -n -c "$(FILE)" && echo "  opened in a new Emacs frame"; \
+	else \
+	  $(EMACSCLIENT) -n "$(FILE)" && echo "  opened in the running Emacs"; \
+	fi
 
 serve: export ## Export, then run the live-reloading dev server
 	$(HUGO) server --bind $(HOST) --port $(PORT) --navigateToChanged
@@ -89,6 +105,7 @@ open: ## Open the running dev server in the default browser
 	open http://$(HOST):$(PORT)/
 
 info: ## Print the toolchain versions this Makefile resolves to
-	@echo "hugo  : $$($(HUGO) version)"
-	@echo "emacs : $$($(EMACS) --version | head -1)"
+	@echo "hugo   : $$($(HUGO) version)"
+	@echo "emacs  : $$($(EMACS) --version | head -1)"
+	@echo "daemon : $$($(EMACSCLIENT) -e t >/dev/null 2>&1 && echo "running ($$($(EMACSCLIENT) -e '(length (visible-frame-list))') visible frame(s))" || echo "not running")"
 	@echo "org sources: $(words $(ORG_SOURCES)) file(s)"
