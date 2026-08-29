@@ -18,7 +18,10 @@ make help     # everything else
 ```
 
 Pushing to `main` builds and deploys via GitHub Actions. Math is rendered at
-build time by Hugo's embedded KaTeX, so no JavaScript is shipped to render it.
-See [`CLAUDE.md`](CLAUDE.md) for the full architecture notes.
+build time by Hugo's embedded KaTeX, so no JavaScript is shipped to render it:
+write `\(...\)` or `\[...\]` in Org and it works.
+
+Run `make hooks` once per clone to enable `.githooks/pre-commit`, which
+re-exports the Org sources so the committed Markdown can never go stale.
 
 Licensed under the [MIT License](LICENSE).
