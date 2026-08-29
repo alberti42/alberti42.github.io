@@ -36,7 +36,7 @@ PORT ?= 1313
 ORG_SOURCES := $(shell find content-org -name '*.org' 2>/dev/null)
 
 .DEFAULT_GOAL := help
-.PHONY: help export new-post edit serve serve-drafts build build-prod \
+.PHONY: help export new-post edit hooks serve serve-drafts build build-prod \
         theme-update check clean distclean open info
 
 help: ## Show this help
@@ -62,6 +62,11 @@ new-post: ## Scaffold a post: make new-post SECTION=emacs SLUG=my-post
 	     archetypes/post.org > content-org/$(SECTION)/$(SLUG).org
 	@echo "created content-org/$(SECTION)/$(SLUG).org"
 	@$(MAKE) --no-print-directory edit FILE=content-org/$(SECTION)/$(SLUG).org
+
+hooks: ## Enable the repo's git hooks (.githooks/) for this clone
+	@git config core.hooksPath .githooks
+	@echo "core.hooksPath -> .githooks"
+	@echo "  pre-commit: re-exports Org sources and stages the generated Markdown"
 
 edit: ## Open FILE in the running Emacs daemon (no-op if none); NO_OPEN=1 skips
 	@test -n "$(FILE)" || { echo "usage: make edit FILE=path"; exit 1; }
@@ -109,3 +114,4 @@ info: ## Print the toolchain versions this Makefile resolves to
 	@echo "emacs  : $$($(EMACS) --version | head -1)"
 	@echo "daemon : $$($(EMACSCLIENT) -e t >/dev/null 2>&1 && echo "running ($$($(EMACSCLIENT) -e '(length (visible-frame-list))') visible frame(s))" || echo "not running")"
 	@echo "org sources: $(words $(ORG_SOURCES)) file(s)"
+	@echo "git hooks  : $$(git config core.hooksPath 2>/dev/null || echo 'not enabled -- run: make hooks')"

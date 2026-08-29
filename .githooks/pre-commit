@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# Re-export the Org sources before committing, so the generated Markdown in
+# content/ can never drift from content-org/.
+#
+# Why this is needed: CI builds from the committed content/*.md and never runs
+# Emacs.  An .org edit committed without `make export' would therefore publish
+# stale content behind a perfectly green build -- the one failure mode of this
+# setup that gives no feedback at all.
+#
+# Install with `make hooks'.  Bypass once with `git commit --no-verify'.
+
+set -eu
+
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+
+# Nothing to do unless this commit touches the Org sources.
+if [ -z "$(git diff --cached --name-only --diff-filter=ACMR -- content-org)" ]; then
+    exit 0
+fi
+
+printf 'pre-commit: re-exporting Org sources... '
+if ! out=$(make export 2>&1); then
+    printf 'FAILED\n\n%s\n\n' "$out"
+    echo 'pre-commit: ox-hugo export failed, so the commit was aborted.'
+    echo '            Fix the error above, or bypass with: git commit --no-verify'
+    exit 1
+fi
+printf 'ok\n'
+
+# Stage only files that are genuinely ox-hugo output.  The destination is
+# derived from each source's own keywords, so hand-written pages that happen
+# to be unstaged (content/about.md, the _index.md files) are never touched.
+generated=''
+for org in $(git ls-files content-org); do
+    [ -f "$org" ] || continue
+    section=$(sed -n 's/^#+HUGO_SECTION:[[:space:]]*//p'     "$org" | head -1)
+    slug=$(   sed -n 's/^#+EXPORT_FILE_NAME:[[:space:]]*//p' "$org" | head -1)
+    [ -n "$section" ] && [ -n "$slug" ] || continue
+    md="content/$section/$slug.md"
+    [ -f "$md" ] && generated="$generated $md"
+done
+
+[ -n "$generated" ] || exit 0
+
+# shellcheck disable=SC2086
+git add -- $generated
+
+included=$(git diff --cached --name-only -- $generated)
+if [ -n "$included" ]; then
+    echo "$included" | sed 's/^/  included in this commit: /'
+fi
+
+exit 0
