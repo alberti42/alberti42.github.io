@@ -1,0 +1,26 @@
+baseURL = "https://alberti42.github.io/"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+summaryLength = 30
+
+# Only `tags`.  The big buckets (Emacs, Quantum physics) are Hugo *sections*,
+# which already own their URL and their own RSS feed; a parallel "categories"
+# taxonomy would just duplicate them.
+[taxonomies]
+  tag = "tags"
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]   # JSON feeds the client-side search index
+  section = ["HTML", "RSS"]        # gives /emacs/index.xml, /physics/index.xml
+
+# `:slugorfilename` keeps the URL tied to #+EXPORT_FILE_NAME in the Org
+# source (which becomes the .md filename), instead of to the title -- so
+# rewording a headline never breaks an existing link.
+[permalinks]
+  [permalinks.page]
+    emacs = "/emacs/:slugorfilename/"
+    physics = "/physics/:slugorfilename/"

@@ -1,0 +1,29 @@
+locale = "en"
+label = "English"
+direction = "ltr"
+weight = 1
+
+title = "Andrea Alberti"
+copyright = "© Andrea Alberti"
+
+[params]
+  dateFormat = "2 January 2006"
+  description = "Quantum physicist. Notes on Emacs, physics, and the open-source tools I build."
+
+  # Sections that count as "the blog": the homepage's recent list, the site
+  # RSS feed and the search index draw from these.  The project catalogue is
+  # deliberately absent, so it never shows up as a "post".
+  mainSections = ["emacs", "physics"]
+
+[params.author]
+  name = "Andrea Alberti"
+  headline = "Quantum physicist"
+  bio = "I am a quantum physicist, and in my free time I develop software. Most of the tools listed here exist to make my own workflow more enjoyable."
+  links = [
+    { github = "https://github.com/alberti42" },
+    { orcid = "https://orcid.org/0000-0002-1698-3895" },
+    { linkedin = "https://www.linkedin.com/in/dr-andrea-alberti" },
+    { x-twitter = "https://x.com/DrAndreaAlberti" },
+    { coffee = "https://buymeacoffee.com/alberti" },
+    { rss = "/index.xml" },
+  ]

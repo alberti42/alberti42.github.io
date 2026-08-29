@@ -1,0 +1,45 @@
+# Rendered by layouts/_shortcodes/projects.html on /projects/.
+# To add a project, append an entry to `items` below.
+
+title: Emacs Contributions
+weight: 40
+intro: These are packages and other types of contributions developed to improve the workflow with [Emacs](https://www.gnu.org/software/emacs/).
+
+items:
+  - title: Agent Shell Math Renderer
+    link: https://github.com/alberti42/agent-shell-math-renderer
+    description: Render LaTeX math in [agent-shell](https://github.com/xenodium/agent-shell)'s streamed markdown output.
+
+  - title: Emacs Docs Themer
+    link: https://github.com/alberti42/emacs-docs-themer
+    description: This repo is a small community space for sharing browser userscripts (Violentmonkey/Tampermonkey) that improve the UX of specific websites.
+
+  - title: Emacs Launcher for macOS
+    link: https://github.com/alberti42/emacs-launcher-for-macOS
+    description: |-
+      Fast native macOS launcher for the Emacs daemon: Open With, drag-drop, emacs:// & org-protocol
+
+  - title: Emacs LTeX+
+    link: https://github.com/ltex-plus/emacs-ltex-plus
+    description: Grammar/spell checker 🔍✔️ for Emacs using LanguageTool with support for LaTeX 🎓, Markdown 📝, Python, Clang, and many others
+
+  - title: emacs-tmux-tandem
+    link: https://github.com/alberti42/emacs-tmux-tandem
+    description: An Emacs module to integrate Emacs in Tmux. Keep Emacs running in one pane of a tmux window alongside your other tools — a shell, yazi, lazygit, or anything else. Run et FILE from any pane in that window and the file opens instantly in the Emacs session next to you.
+
+  - title: latex-to-svg
+    link: https://github.com/alberti42/latex-to-svg
+    description: SVG LaTeX-math previews for Emacs markup buffers. It supports org-mode and markdown buffers.
+
+  - title: latex-to-svg-backend
+    link: https://github.com/alberti42/latex-to-svg-backend
+    description: A small, buffer-agnostic Emacs library that turns a LaTeX math string into an SVG image suitable for overlaying in a buffer. It is the rendering core extracted from agent-shell-math-renderer; front-ends do their own equation detection and image placement and delegate the typesetting here.<br/>Used by [latex-to-svg](https://github.com/alberti42/latex-to-svg) (Org/Markdown math preview) and [agent-shell-math-renderer](https://github.com/alberti42/agent-shell-math-renderer) (math in agent-shell output).
+
+  - title: org-semantic
+    link: https://github.com/alberti42/org-semantic
+    description: Search a tree of org-mode notes by meaning or by words. One static binary, no database, no Python. It runs as a one-shot command, or stays resident for Emacs — over a pipe, never a port.
+
+  - title: straight-overview
+    link: https://github.com/alberti42/straight-overview
+    description: |-
+      Selective-upgrade UI for straight.el packages: see which are behind upstream and update (or pin) only the ones you choose

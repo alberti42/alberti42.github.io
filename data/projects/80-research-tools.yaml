@@ -1,0 +1,42 @@
+# Rendered by layouts/_shortcodes/projects.html on /projects/.
+# To add a project, append an entry to `items` below.
+
+title: Research Tools
+weight: 80
+
+items:
+  - title: ChatGPT Plain Text Composer (userscript)
+    link: https://github.com/alberti42/chatGPT-plain-composer
+    description: A lightweight userscript for ChatGPT that replaces the native rich composer with a plain textarea overlay for smooth, lag-free typing — especially in very long chats where the default composer can become slow.
+    ranking: 1
+
+  - title: JupyterLab extension for Mapyter
+    link: https://github.com/alberti42/jupyterlab_mapyter
+    description: A JupyterLab extension providing syntax support for [Mapyter kernel](https://github.com/alberti42/mapyter). It also provides a plugin for JupyterLab for downloading plots with a button. The button is particularly convenient to save plots shown as vectorial `.svg` graphics.
+    ranking: 1
+
+  - title: JupyterLab Image Downloader for SVG and Common Image Formats
+    link: https://github.com/alberti42/jupyterlab_image_downloader
+    description: A userscript to add a **download button** to images and SVGs rendered in JupyterLab notebooks. This script supports both `.svg` and common image formats like `.png` and `.jpeg`. The download buttons appear in the top-right corner of the rendered output, allowing you to save the plot with a single click.
+    ranking: 1
+
+  - title: Keynote Progress Bar
+    link: https://github.com/alberti42/Keynote-Progress-Bar
+    description: This AppleScript program adds a customizable progress bar to presentations created with Apple Keynote. The progress bar is configured using commands placed in the presenter notes of your slides. This project utilizes a custom Objective-C framework, KeynoteProgressBarHelper, for generating vector graphics (PDF) images of the progress bar.
+    ranking: 1
+
+  - title: Mapyter
+    link: https://github.com/alberti42/mapyter
+    description: A JupyterLab kernel to develop MATLAB in a notebook. The project started before Mathworks started [their development](https://de.mathworks.com/products/reference-architectures/jupyter.html) of MATLAB kernel for JupyterLab. It offers more advanced features than those currenlty provided by the official kernel, such as the possibility to update plots live, create animations, and display progress bar (even for `parfor` loops!). Unfortunately, the documentation page is still missing.
+    ranking: 1
+
+  - title: Millennia Laser Control App
+    link: https://github.com/alberti42/Millennia-Laser-Control-App
+    description: Application for controlling and logging Spectra-Physics Millennia Lasers. It covers all functions provided by the app shipped originally with the laser. It also provides new features, most notably, the possibility to log multiple parameters of the laser. Moreover, it gives a feedback about the instantaneous RMS noise level of the laser (5s integration time). And it allows controlling multiple lasers when these are connected to the same computer via USB.
+    ranking: 1
+
+  - title: TypingMind Plain Text Composer (userscript)
+    link: https://github.com/alberti42/typingmind-plain-composer
+    description: A lightweight userscript for TypingMind that replaces the native rich composer with a plain textarea overlay for smoother typing — especially in long chats where the DOM becomes heavy and the original composer starts lagging.
+    ranking: 1
+    disabled: true   # hidden from /projects/; flip to false to publish

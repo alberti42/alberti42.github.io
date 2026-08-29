@@ -1,0 +1,24 @@
+# Hugo does not merge a theme module's root-level `markup` config into the
+# site, so Congo ships this file expecting it to live in the project.  The
+# passthrough block is what makes maths work, and is required by both Congo's
+# {{< katex >}} shortcode and this site's build-time renderer in
+# layouts/_markup/render-passthrough.html.
+
+[goldmark]
+  [goldmark.renderer]
+    unsafe = true              # let raw HTML through (e.g. <br/> in project blurbs)
+  [goldmark.extensions]
+    [goldmark.extensions.passthrough]
+      enable = true
+      [goldmark.extensions.passthrough.delimiters]
+        block  = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
+
+[highlight]
+  noClasses = false            # use Congo's theme-aware syntax CSS, not inline styles
+  lineNumbersInTable = true
+  tabWidth = 2
+
+[tableOfContents]
+  startLevel = 2
+  endLevel = 4

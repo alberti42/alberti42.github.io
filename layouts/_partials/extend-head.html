@@ -1,0 +1,25 @@
+{{- /*
+  Congo calls this hook at the end of <head>.
+
+  Touching .Content forces the page body to render now, which runs
+  _markup/render-passthrough.html and therefore sets `hasMath` before we test
+  it below.  Without this no-op the Store would still be empty at head time.
+*/ -}}
+{{- $noop := .Content -}}
+{{- if .Page.Store.Get "hasMath" -}}
+  {{- $algorithm := .Site.Params.fingerprintAlgorithm | default "sha256" -}}
+  {{- /* Congo vendors KaTeX, so this stays self-hosted -- no CDN request. */ -}}
+  {{- with resources.Get "lib/katex/katex.min.css" -}}
+    {{- $css := . | resources.Fingerprint $algorithm -}}
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ $css.Permalink }}"
+      integrity="{{ $css.Data.Integrity }}"
+    />
+  {{- end -}}
+  {{- /* katex.min.css asks for fonts/ relative to itself; publish them. */ -}}
+  {{- range resources.Match "lib/katex/fonts/*" -}}
+    {{- .Publish -}}
+  {{- end -}}
+{{- end -}}

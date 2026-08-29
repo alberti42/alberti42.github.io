@@ -1,0 +1,47 @@
+# Rendered by layouts/_shortcodes/projects.html on /projects/.
+# To add a project, append an entry to `items` below.
+
+title: Shell Plugins
+weight: 20
+intro: These are plugins developed to improve the workflow with [Zsh](https://www.zsh.org/) shell and [Tmux](https://github.com/tmux/tmux).
+
+items:
+  - title: dotfiles for macOS & linux
+    link: https://github.com/alberti42/dotfiles
+    description: These are my personal dotfiles, which include configurations for zsh shell, various tools and applications I use daily. They are designed to be lightweight and fast, supporting my workflow on macOS and Linux.
+
+  - title: fzf-recent-files
+    link: https://github.com/alberti42/fzf-recent-dirs
+    description: A minimal Zsh plugin for fuzzy-jumping to recently visited directories
+
+  - title: tmux-fzf-links plugin for tmux
+    link: https://github.com/alberti42/tmux-fzf-links
+    description: A versatie tmux plugin to open any kind of link. Links are defined by customizable regular expressions. You can open local files, url, and any lines of code where errors have been generated.
+
+  - title: tmux-ssh-syncing plugin for zsh shell
+    link: https://github.com/alberti42/tmux-ssh-syncing
+    description: Synchronize your tmux window names with active ssh sessions. This plugin dynamically updates the tmux window name to reflect the remote hosts of active ssh sessions in the same window. It also restores the original window name when all ssh sessions are closed.
+
+  - title: Yazi plugin faster-piper
+    link: https://github.com/alberti42/faster-piper.yazi
+    description: faster-piper is a general-purpose previewer that pipes the output of an arbitrary shell command into Yazi's preview pane, with aggressive caching and efficient scrolling for large outputs.
+
+  - title: Zinit Annex for Sourcing the Latest GitHub Release
+    link: https://github.com/alberti42/zinit-annex-latest-release
+    description: Zinit annex that automatically selects the latest GitHub release tag when installing or updating plugins built from source.
+
+  - title: Zsh autocompletion plugin for miscellaneous commands
+    link: https://github.com/alberti42/zsh-misc-completions
+    description: This repository contains a collection of miscellaneous Zsh completions for various tools.
+
+  - title: zsh-appearance-control
+    link: https://github.com/alberti42/zsh-appearance-control
+    description: a Zsh plugin that helps your shell “remember” whether you are in light mode or dark mode.
+
+  - title: zsh-indent-control
+    link: https://github.com/alberti42/zsh-indent-control
+    description: A tiny Zsh plugin that makes Tab behave nicely at the start of a line → it turns leading Tab into spaces.
+
+  - title: zsh-opencode-tab
+    link: https://github.com/alberti42/Zsh-Opencode-Tab
+    description: A zsh plugin to turn natural language into a zsh command by pressing TAB. Compatible with Oh My Zsh.

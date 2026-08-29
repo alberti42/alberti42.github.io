@@ -1,0 +1,64 @@
+# Theme options.  Anything omitted here falls back to Congo's own defaults:
+# https://jpanther.github.io/congo/docs/configuration/#theme-parameters
+
+colorScheme = "sapphire"        # closest to the blue of the old minima site
+defaultAppearance = "light"
+autoSwitchAppearance = true     # follow the reader's OS light/dark setting
+
+defaultThemeColor = "#FFFFFF"
+
+enableSearch = true             # client-side, needs `home = [... "JSON"]`
+enableCodeCopy = true           # copy button on code blocks
+enableImageLazyLoading = true
+enableImageWebp = true
+
+fingerprintAlgorithm = "sha256"
+
+[header]
+  layout = "hybrid"             # inline links on desktop, hamburger on mobile
+  showTitle = true
+
+[footer]
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "page"               # renders content/_index.md ...
+  showRecent = true             # ... then the most recent posts
+  recentLimit = 5
+
+[article]
+  showDate = true
+  showDateUpdated = true
+  showAuthor = false            # single-author site; the byline is noise
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = true
+  editURL = "https://github.com/alberti42/alberti42.github.io/blob/main/content-org/"
+  editAppendPath = false        # the .org source is the thing worth editing
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true         # tag chips under the title
+  showWordCount = false
+  showComments = false
+
+[list]
+  showBreadcrumbs = true
+  showSummary = true
+  showTableOfContents = false
+  showTaxonomies = false
+  groupByYear = true
+  paginationWidth = 1
+
+[sitemap]
+  excludedKinds = ["taxonomy", "term"]
+
+[taxonomy]
+  showTermCount = true
+
+[verification]
+  google = "it-zAVC2f-7GR_upkWlQbvv5VRM387pAsz0_O_Blaro"

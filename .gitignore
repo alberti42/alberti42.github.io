@@ -1,8 +1,11 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-Gemfile.lock
+# Hugo build output and caches
+/public/
+/resources/
+.hugo_build.lock
 
+# ox-hugo and its dependencies, installed per-repo by `make export`
+/.emacs-packages/
+
+# Editor / OS
 *.sublime-workspace
+.DS_Store

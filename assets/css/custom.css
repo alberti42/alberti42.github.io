@@ -1,0 +1,18 @@
+/* Picked up automatically by Congo's head partial, after the theme CSS. */
+
+/* Shields.io star badges sit inline with the project title, and must not
+   inherit the block-image margins that Tailwind's `prose` gives images. */
+.prose li img[src*="img.shields.io"] {
+  display: inline-block;
+  margin: 0 0 0 0.15rem;
+  vertical-align: -0.1em;
+}
+
+/* Build-time KaTeX emits both HTML and MathML; the stylesheet hides the
+   MathML copy, but let long display equations scroll instead of overflowing
+   on narrow screens. */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}

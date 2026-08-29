@@ -1,0 +1,37 @@
+# Rendered by layouts/_shortcodes/projects.html on /projects/.
+# To add a project, append an entry to `items` below.
+
+title: macOS Utilities
+weight: 10
+
+items:
+  - title: macOS Config Manager
+    link: https://github.com/alberti42/macOS-config-manager
+    description: A small, dependency-free Python CLI to snapshot and restore macOS preferences managed via the defaults system.
+    ranking: 1
+
+  - title: macOS Hotkey Manager
+    link: https://github.com/alberti42/macOS-hotkeys-manager
+    description: A Python script for exporting, importing and resetting macOS application hotkeys. This is particularly useful if you need to transfer your custom keyboard shortcuts to a different machine or back them up for safekeeping.
+    ranking: 1
+
+  - title: Magic Warnings
+    link: https://github.com/alberti42/Magic-Warnings
+    description: A lightweight macOS app that monitors the battery levels of your Apple Magic Mouse, Trackpad, and Keyboard.
+    ranking: 1
+
+  - title: SSHuttleBar
+    link: https://github.com/alberti42/SSHuttleBar
+    description: This apps allows you to control the CLI utility [`sshuttle`](https://github.com/sshuttle/sshuttle) direclty from the macOS menu bar. Thereby, one can emulate the functionality of a VPN by leveraging SSH connections. The program works, but the documentation is still missing. It integrates with 1Password SSH agent to retrieve automatically the password of remote servers.
+    ranking: 1
+    disabled: true   # hidden from /projects/; flip to false to publish
+
+  - title: Volume Control App
+    link: https://github.com/alberti42/Volume-Control
+    description: This app allows you to directly control the volume of Apple Music and of Spotify using `volume-up` and `volume-down` keys from your keyboard.
+    ranking: 1
+
+  - title: iTunes Volume Control
+    link: https://github.com/alberti42/iTunes-Volume-Control
+    description: The app is discontinued and superceded by Volume Control. The reason is that iTunes does no longer exist in recent macOS versions. Also, the newer app, Volume Control, is no longer restricted to Apple Music. It also works with Spotify and a few other music players.
+    ranking: 2

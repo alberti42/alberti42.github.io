@@ -1,0 +1,28 @@
+{{- /*
+  Renders the project catalogue from data/projects/*.yaml.
+
+  Call it with the percent form -- {{% projects %}}, not {{< projects >}} --
+  so the Markdown emitted below is processed as Markdown: the "## " headings become real headings with anchor
+  links, and each project's `description` keeps its Markdown links.
+
+  To add a project, edit the YAML -- never this file.  To add a whole
+  category, drop in a new data/projects/NN-name.yaml; `weight` orders them.
+  An entry marked `disabled: true` is skipped -- the replacement for renaming
+  a file to *.markdown.disabled under Jekyll.
+*/ -}}
+{{- $categories := slice -}}
+{{- range $_, $category := hugo.Data.projects -}}
+  {{- $categories = $categories | append $category -}}
+{{- end -}}
+{{- $badge := "https://img.shields.io/github/stars/%s?style=flat-square&label=%%E2%%98%%85&color=dfb317&cacheSeconds=86400" -}}
+{{- range sort $categories "weight" }}
+## {{ .title }}
+{{ with .intro }}
+{{ . }}
+{{ end }}
+{{- range where .items "disabled" "!=" true }}
+{{- $repo := strings.TrimPrefix "https://github.com/" .link }}
+{{- $text := .description | replaceRE `\s*\n\s*` " " }}
+- **[{{ .title }}]({{ .link }})** [![Stars on GitHub]({{ printf $badge $repo }})]({{ .link }}/stargazers): {{ $text }}
+{{- end }}
+{{ end -}}

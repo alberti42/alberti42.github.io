@@ -1,0 +1,60 @@
+#+TITLE: Publishing this site from Org with ox-hugo
+#+DATE: <2026-08-29 Sat>
+#+DESCRIPTION: How the Org sources in content-org/ become the Markdown that Hugo builds.
+#+HUGO_BASE_DIR: ../..
+#+HUGO_SECTION: emacs
+#+HUGO_TAGS: org-mode hugo publishing
+#+EXPORT_FILE_NAME: publishing-this-site-from-org
+#+HUGO_DRAFT: false
+
+This site is written in Org and built by [[https://gohugo.io][Hugo]]. Nothing in =content/= is
+edited by hand: every post starts life as an =.org= file under =content-org/=,
+and [[https://ox-hugo.scripter.co][ox-hugo]] exports it to Hugo-flavoured Markdown.
+
+* Why not let Hugo read the Org files directly?
+
+Hugo /can/ parse =.org= natively, through a Go reimplementation of the Org
+syntax. It handles the common cases, but it is not Org's own exporter, so it
+quietly does not understand =#+INCLUDE=, Babel results, macros, or link
+abbreviations.
+
+ox-hugo takes the other route: it runs the real Org exporter inside Emacs and
+emits Markdown. Hugo then only ever sees Markdown, and every Org feature keeps
+working.
+
+* The layout
+
+#+begin_src text
+content-org/emacs/this-file.org   ->   content/emacs/this-file.md
+#+end_src
+
+Three keywords do the routing:
+
+- =#+HUGO_BASE_DIR= :: where the Hugo site root is, relative to the Org file.
+- =#+HUGO_SECTION= :: which section the post belongs to, and therefore its URL.
+- =#+EXPORT_FILE_NAME= :: the slug.
+
+Tags come from =#+HUGO_TAGS=. Note that =#+FILETAGS= does /not/ work in the
+one-file-per-post flow — that is a subtree-flow feature, and it is the single
+easiest thing to get wrong here.
+
+* Exporting
+
+From inside the buffer, =C-c C-e H H= exports the current file. To rebuild
+everything from a shell:
+
+#+begin_src sh
+make export      # org  -> content/*.md
+make serve       # live-reloading preview on :1313
+#+end_src
+
+* Code blocks keep their highlighting
+
+#+begin_src emacs-lisp
+(use-package ox-hugo
+  :after ox
+  :custom (org-hugo-front-matter-format "yaml"))
+#+end_src
+
+That is the whole pipeline. The Markdown in =content/= is a build artefact
+that happens to be committed, so CI does not need Emacs.

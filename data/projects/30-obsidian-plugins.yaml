@@ -1,0 +1,37 @@
+# Rendered by layouts/_shortcodes/projects.html on /projects/.
+# To add a project, append an entry to `items` below.
+
+title: Obsidian Plugins
+weight: 30
+intro: These are plugins developed to improve the workflow with [Obsidian](https://obsidian.md/) personal knowledge management system.
+
+items:
+  - title: Annotations for Obsidian Community Plugins
+    link: https://github.com/alberti42/obsidian-plugins-annotations
+    description: A plugin that allows users to add personal annotations to each installed plugin in Obsidian. This is particularly useful for keeping track of why certain plugins are installed and their specific use cases.
+
+  - title: BibDesk Integration Plugin
+    link: https://github.com/alberti42/obsidian-bibdesk-integration
+    description: A plugin that integrates the macOS BibDesk application with the PDF++ plugin in Obsidian, enabling you to manage and open PDFs associated with BibDesk entries directly from Obsidian. It works with external BibTeX files, leveraging BibDesk’s bdsk-file-<NUMBER> fields, which act as macOS bookmarks, allowing seamless file access even if files are renamed or moved.
+
+  - title: Dataview Recent Files
+    link: https://github.com/alberti42/obsidian-dataview-recent-files
+    description: A plugin visualizing a list of recently create and modified files in a fuzzy search modal in Obsidian. It extends the functionality of Obsidian Dataview plugin. The list of the recently created and modified files is determined by the frontmatter fields, rather than on the timestamp of the MarkDown file, which can change in an uncontrolled manner, especially if syncing the vault between multiple Obsidian devices. The dcumentation page is still misisng.
+    disabled: true   # hidden from /projects/; flip to false to publish
+
+  - title: Icon Bar Manager
+    link: https://github.com/alberti42/obsidian-icon-bar-manager-plugin
+    description: A plugin for hiding undesired icons in Obisdian. Many plugins install icons without offering the possibility to hide them, resulting in a cluttered interface. The plugin allows controlling the order of the few icons one wishes to use. Unfortunately, the documentation page is missing. Furthermore, the plugin is still in an alpha stage and possibly only useful to expert users who can tweak it.
+    disabled: true   # hidden from /projects/; flip to false to publish
+
+  - title: Import Attachments+ Plugin
+    link: https://github.com/alberti42/obsidian-import-attachments-plus
+    description: A plugin that enhances the attachment management experience in Obsidian. It allows you to import, organize, and handle attachments (like images, documents, and other files) seamlessly within your vault.
+
+  - title: Minimize on Close
+    link: https://github.com/alberti42/obsidian-minimize-on-close
+    description: A plugin that minimizes the application window to the dock or taskbar when all open panes are closed. This behavior is particularly standard on macOS and can now be optionally applied across all platforms.
+
+  - title: Recoll Search Engine Plugin for Obsidian
+    link: https://github.com/alberti42/obsidian-recoll-search-plugin
+    description: A plugin for Obsidian to search the vault using the powerful [Recoll Search Engine](https://www.recoll.org/).

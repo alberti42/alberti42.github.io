@@ -1,0 +1,24 @@
+{{- /*
+  Render LaTeX at BUILD TIME with Hugo's embedded KaTeX, instead of shipping
+  the KaTeX JavaScript to the reader.  Congo already enables the Goldmark
+  passthrough extension with these delimiters (see the theme's markup.toml):
+
+      \( ... \)        inline
+      \[ ... \]        block
+      $$ ... $$        block
+
+  so you write plain LaTeX in your Org files and it Just Works -- no
+  {{< katex >}} shortcode, no JS, and the maths is selectable text.
+
+  The hook records `hasMath` on the page so _partials/extend-head.html can
+  pull in the KaTeX stylesheet only where it is actually needed.
+*/ -}}
+{{- $opts := dict "output" "htmlAndMathml" "displayMode" (eq .Type "block") -}}
+{{- with try (transform.ToMath .Inner $opts) -}}
+  {{- with .Err -}}
+    {{- errorf "KaTeX could not render the maths at %s: %s" $.Position . -}}
+  {{- else -}}
+    {{- $.Page.Store.Set "hasMath" true -}}
+    {{- .Value -}}
+  {{- end -}}
+{{- end -}}

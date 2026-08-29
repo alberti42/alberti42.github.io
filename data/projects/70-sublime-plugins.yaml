@@ -1,0 +1,24 @@
+# Rendered by layouts/_shortcodes/projects.html on /projects/.
+# To add a project, append an entry to `items` below.
+
+title: Sublime Text Editor Plugins
+weight: 70
+
+items:
+  - title: Nearly syntax highlighting for Sublime Text Editor
+    link: https://github.com/alberti42/Nearley.sublime-syntax
+    description: A Sublime Text syntax highlighting file for [Nearley](https://nearley.js.org/). Nearly is a simple, fast, and powerful parsing toolkit. The Nearley.sublime-syntax file enables Sublime Text to recognize and highlight the syntax of Nearley grammar files (`*.ne`) effectively.
+
+  - title: Recent Files Tracker for Sublime Text
+    link: https://github.com/alberti42/sublime-recent-files-tracker
+    description: A Sublime Text plugin that tracks recently opened files and projects. It stores the file paths in a JSON file, making it easy to integrate with other tools. This plugin is especially designed to work together with the companion plugin [Get Recently Opened Files with Sublime Text](https://github.com/alberti42/Get-Recent-ST-Files-For-LaunchBar) for LaunchBar.
+
+  - title: Sublime Project Pyright to Basedpyright Converter
+    link: https://github.com/alberti42/convert_pyright_to_basepyright
+    description: This utility converts Sublime Text `.sublime-project` files configured for `LSP-pyright` to use `LSP-basedpyright`. `LSP-basedpyright` extends the functionality of `LSP-pyright` by providing enhanced support for Python projects in Sublime Text
+    disabled: true   # hidden from /projects/; flip to false to publish
+
+  - title: Virtualenv Selector for Sublime Text
+    link: https://github.com/alberti42/sublime-virtualenv
+    description: A Sublime Text plugin that provides a simple way to select Python virtual environments directly from the editor.
+    disabled: true   # hidden from /projects/; flip to false to publish

@@ -1,0 +1,16 @@
+#+TITLE: @TITLE@
+#+DATE: @DATE@
+#+DESCRIPTION:
+#+HUGO_BASE_DIR: ../..
+#+HUGO_SECTION: @SECTION@
+#+HUGO_TAGS:
+#+EXPORT_FILE_NAME: @SLUG@
+#+HUGO_DRAFT: true
+
+Write here.  Maths works inline, \(e^{i\pi} + 1 = 0\), and as a display block:
+
+\[
+  \int_{-\infty}^{\infty} e^{-x^2}\,\mathrm{d}x = \sqrt{\pi}.
+\]
+
+Set =#+HUGO_DRAFT: false= when it is ready, then =make build=.

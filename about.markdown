@@ -1,9 +1,0 @@
----
-layout: page
-title: About me
-permalink: /about/
-order: 2
----
-
-I am a quantum physicist and I like in my free time to develop software. Many of the apps and utilities posted on this site have been developed to make my workflow more enjoyable. 
-

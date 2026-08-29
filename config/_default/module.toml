@@ -1,0 +1,4 @@
+# Congo is pulled in as a Hugo Module (see go.mod).  Update it with:
+#   make theme-update      (hugo mod get -u ./... && hugo mod tidy)
+[[imports]]
+  path = "github.com/jpanther/congo/v2"
