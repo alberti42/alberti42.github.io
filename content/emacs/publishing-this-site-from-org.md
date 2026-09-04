@@ -8,19 +8,19 @@ draft: false
 ---
 
 This site is written in Org and built by [Hugo](https://gohugo.io). Nothing in `content/` is
-edited by hand: every post starts life as an `.org` file under `content-org/`,
-and [ox-hugo](https://ox-hugo.scripter.co) exports it to Hugo-flavoured Markdown.
+edited by hand: every post is composed as an `.org` file under `content-org/`,
+and [ox-hugo](https://ox-hugo.scripter.co) exports it to Hugo-flavored Markdown.
 
 
-## Why not let Hugo read the Org files directly? {#why-not-let-hugo-read-the-org-files-directly}
+## Why not simply have Hugo read the Org files directly? {#why-not-simply-have-hugo-read-the-org-files-directly}
 
 Hugo _can_ parse `.org` natively, through a Go reimplementation of the Org
 syntax. It handles the common cases, but it is not Org's own exporter, so it
 quietly does not understand `#+INCLUDE`, Babel results, macros, or link
 abbreviations.
 
-ox-hugo takes the other route: it runs the real Org exporter inside Emacs and
-emits Markdown. Hugo then only ever sees Markdown, and every Org feature keeps
+ox-hugo works differently: it runs the real Org exporter inside Emacs and emits
+Markdown. Hugo then only ever sees Markdown, and every Org feature keeps
 working.
 
 
@@ -42,8 +42,7 @@ Three keywords do the routing:
 : the slug.
 
 Tags come from `#+HUGO_TAGS`. Note that `#+FILETAGS` does _not_ work in the
-one-file-per-post flow — that is a subtree-flow feature, and it is the single
-easiest thing to get wrong here.
+one-file-per-post flow (that is a subtree-flow feature).
 
 
 ## Exporting {#exporting}
@@ -65,5 +64,5 @@ make serve       # live-reloading preview on :1313
   :custom (org-hugo-front-matter-format "yaml"))
 ```
 
-That is the whole pipeline. The Markdown in `content/` is a build artefact
-that happens to be committed, so CI does not need Emacs.
+That is the whole pipeline: it produces Markdown files in `content/` as a build
+artifact that happens to be committed, so CI does not need Emacs.
