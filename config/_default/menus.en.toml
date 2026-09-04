@@ -6,10 +6,10 @@
   pageRef = "emacs"
   weight = 10
 
-[[main]]
-  name = "Quantum physics"
-  pageRef = "physics"
-  weight = 20
+# [[main]]
+#   name = "Quantum physics"
+#   pageRef = "physics"
+#   weight = 20
 
 [[main]]
   name = "Open source"

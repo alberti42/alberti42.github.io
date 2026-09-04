@@ -3,6 +3,7 @@ title: "Quantum physics"
 description: "Notes from research and teaching in quantum physics."
 cascade:
   showEdit: true
+disabled: true
 ---
 
 Notes from research and teaching: derivations I want to keep, experimental
