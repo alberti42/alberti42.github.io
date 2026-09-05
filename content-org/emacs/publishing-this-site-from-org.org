@@ -1,5 +1,5 @@
 #+TITLE: Publishing this site from Org with ox-hugo
-#+DATE: <2026-08-29 Sat>
+#+DATE: <2026-08-29>
 #+DESCRIPTION: How the Org sources in content-org/ become the Markdown that Hugo builds.
 #+HUGO_BASE_DIR: ../..
 #+HUGO_SECTION: emacs
@@ -7,53 +7,94 @@
 #+EXPORT_FILE_NAME: publishing-this-site-from-org
 #+HUGO_DRAFT: false
 
-This site is written in Org and built by [[https://gohugo.io][Hugo]]. Nothing in =content/= is
-edited by hand: every post is composed as an =.org= file under =content-org/=,
-and [[https://ox-hugo.scripter.co][ox-hugo]] exports it to Hugo-flavored Markdown.
+This site is written in Org and built by [[https://gohugo.io][Hugo]]. Every post is composed as =.org=
+file under =content-org/=, and [[https://ox-hugo.scripter.co][ox-hugo]] exports it to Hugo-flavored
+Markdown. Org notes are automatically exported to =content/=.
 
-* Why not simply have Hugo read the Org files directly?
-
-Hugo /can/ parse =.org= natively, through a Go reimplementation of the Org
-syntax. It handles the common cases, but it is not Org's own exporter, so it
-quietly does not understand =#+INCLUDE=, Babel results, macros, or link
-abbreviations.
-
-ox-hugo works differently: it runs the real Org exporter inside Emacs and emits
-Markdown. Hugo then only ever sees Markdown, and every Org feature keeps
-working.
-
-* The layout
+* Setting meta information (title, tags) and decide routing
 
 #+begin_src text
-content-org/emacs/this-file.org   ->   content/emacs/this-file.md
+content-org/emacs/this-file.org -> content/emacs/this-file.md
 #+end_src
 
 Three keywords do the routing:
 
 - =#+HUGO_BASE_DIR= :: where the Hugo site root is, relative to the Org file.
 - =#+HUGO_SECTION= :: which section the post belongs to, and therefore its URL.
-- =#+EXPORT_FILE_NAME= :: the slug.
+- =#+EXPORT_FILE_NAME= :: the slug used in the site (e.g., for this document
+  =publishing-this-site-from-org=).
 
-Tags come from =#+HUGO_TAGS=. Note that =#+FILETAGS= does /not/ work in the
-one-file-per-post flow (that is a subtree-flow feature).
+Tags come from =#+HUGO_TAGS=. Since [[https://github.com/kaushalmodi/ox-hugo/pull/492][PR #492]], one can in principle also use the
+alternative fallback syntax =#+FILETAGS=, which is the familiar keyword if one
+is used to write org notes.
 
-* Exporting
+* How the export procedure works
 
-From inside the buffer, =C-c C-e H H= exports the current file. To rebuild
-everything from a shell:
+** ox-hugo vs. Hugo org exporter
+
+Hugo /can/ parse =.org= natively, through a Go reimplementation of the Org
+syntax. It handles the common cases, but it is not Org's own exporter, so it
+has several limitations. It fails to
+
+- understand keywords such as =#+INCLUDE=,
+- export Babel results,
+- recognize macros,
+- or link abbreviations.
+
+Instead, [[https://ox-hugo.scripter.co/][ox-hugo]] works differently: it relies on the real Org exporter inside
+Emacs and produces Markdown files. Hugo then only ever sees Markdown. This
+workflow ensures the best coverage of the org-mode features.
+
+** Two ways to trigger the export
+
+From inside the buffer, =C-c C-e H H= exports the current file. Instead, to
+rebuild everything from a shell, I rely on a [[https://github.com/alberti42/alberti42.github.io/blob/main/Makefile][Makefile]]:
 
 #+begin_src sh
-make export      # org  -> content/*.md
-make serve       # live-reloading preview on :1313
+make export
+make serve # live preview on :1313
 #+end_src
 
-* Code blocks keep their highlighting
+* What is cool about this workflow
+
+** Code blocks keep their highlighting
 
 #+begin_src emacs-lisp
-(use-package ox-hugo
-  :after ox
-  :custom (org-hugo-front-matter-format "yaml"))
+(use-package ox-hugo :after ox :custom (org-hugo-front-matter-format "yaml"))
 #+end_src
 
-That is the whole pipeline: it produces Markdown files in =content/= as a build
-artifact that happens to be committed, so CI does not need Emacs.
+** Math equations are rendered as selectable MathML text
+
+LaTeX equations are rendered directly at build time into [[https://en.wikipedia.org/wiki/MathML][MathML]], styled using
+KaTeX CSS stylesheets. The conversion is done by Hugo's embedded KaTeX
+exporter.
+
+\[ E=mc^2 \]
+ 
+This ensures that the website does not require any JavaScript to be transposed
+to KaTeX-styled MathML, since all conversions already happen at build time.
+
+Furthermore, equations are rendered as selectable text, thus avoiding linking
+SVG files, which cannot be easily parsed by search engines.
+
+* About the template and look
+
+The website look is not glamorous but functional. It is based on Hugo's [[https://github.com/jpanther/congo][Congo]]
+template. In addition, there is a bunch of local customizations on top of the template via:
+
+- =layouts/= :: it shadows the theme's own layout,
+- =assets/css/custom.css= :: this is appended by Congo after its own CSS.
+
+To update the template:
+
+#+begin_src sh
+make theme-update
+#+end_src
+
+All config files live under =config/_default=.
+
+* Concluions
+
+That is the whole pipeline. The workflow is kept rather simple. It produces
+Markdown files in =content/= as a build artifact, which are then committed, so
+the GitHub [[https://github.com/alberti42/alberti42.github.io/blob/main/.github/workflows/hugo.yml][CI]] does not need Emacs.
