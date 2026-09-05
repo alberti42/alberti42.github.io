@@ -19,9 +19,7 @@
 ;; in `safe-local-variable-values' and stop being asked.
 
 ((nil
-  . ((compile-command . "make ")
-
-     (eval
+  . ((eval
       . (let* ((root (locate-dominating-file
                       (or buffer-file-name default-directory) ".dir-locals.el"))
                (brew (or (getenv "HOMEBREW_PREFIX") "/opt/homebrew"))
