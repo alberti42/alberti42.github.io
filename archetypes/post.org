@@ -1,10 +1,10 @@
-#+TITLE: @TITLE@
-#+DATE: @DATE@
+#+TITLE: @TITLE
+#+DATE: @DATE
 #+DESCRIPTION:
 #+HUGO_BASE_DIR: ../..
-#+HUGO_SECTION: @SECTION@
+#+HUGO_SECTION: @SECTION
 #+HUGO_TAGS:
-#+EXPORT_FILE_NAME: @SLUG@
+#+EXPORT_FILE_NAME: @SLUG
 #+HUGO_DRAFT: true
 
 Write here.  Maths works inline, \(e^{i\pi} + 1 = 0\), and as a display block:

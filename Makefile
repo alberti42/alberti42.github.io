@@ -36,8 +36,8 @@ PORT ?= 1313
 ORG_SOURCES := $(shell find content-org -name '*.org' 2>/dev/null)
 
 .DEFAULT_GOAL := help
-.PHONY: help export new-post edit hooks serve serve-drafts build build-prod \
-        theme-update check clean distclean open info
+.PHONY: help export new-post new-post-scratch edit hooks serve serve-drafts \
+        build build-prod theme-update check clean distclean open info
 
 help: ## Show this help
 	@echo "Targets (make <target>):"
@@ -49,19 +49,39 @@ help: ## Show this help
 export: ## Export content-org/*.org -> content/*.md via ox-hugo
 	$(EMACS) --batch -l scripts/ox-hugo-export.el
 
-new-post: ## Scaffold a post: make new-post SECTION=emacs SLUG=my-post
+new-post: ## Scaffold a post: make new-post [SECTION=emacs SLUG=my-post]
+ifeq ($(strip $(SECTION))$(strip $(SLUG)),)
+	@$(MAKE) --no-print-directory new-post-scratch
+else
 	@test -n "$(SECTION)" || { echo "usage: make new-post SECTION=emacs SLUG=my-post"; exit 1; }
 	@test -n "$(SLUG)"    || { echo "usage: make new-post SECTION=emacs SLUG=my-post"; exit 1; }
 	@mkdir -p content-org/$(SECTION)
 	@test ! -e content-org/$(SECTION)/$(SLUG).org || \
 	  { echo "content-org/$(SECTION)/$(SLUG).org already exists"; exit 1; }
-	@sed -e 's|@TITLE@|$(SLUG)|g' \
-	     -e "s|@DATE@|$$(date '+<%Y-%m-%d %a>')|g" \
-	     -e 's|@SECTION@|$(SECTION)|g' \
-	     -e 's|@SLUG@|$(SLUG)|g' \
+	@sed -e 's|@TITLE|$(SLUG)|g' \
+	     -e "s|@DATE|$$(date '+<%Y-%m-%d>')|g" \
+	     -e 's|@SECTION|$(SECTION)|g' \
+	     -e 's|@SLUG|$(SLUG)|g' \
 	     archetypes/post.org > content-org/$(SECTION)/$(SLUG).org
 	@echo "created content-org/$(SECTION)/$(SLUG).org"
 	@$(MAKE) --no-print-directory edit FILE=content-org/$(SECTION)/$(SLUG).org
+endif
+
+# Internal: what a bare `make new-post` (no SECTION/SLUG) falls through to --
+# a file-less scratch buffer instead of a scaffolded file. Not meant to be
+# invoked by name; not listed in `make help`.
+new-post-scratch:
+	@if ! command -v $(EMACSCLIENT) >/dev/null 2>&1; then \
+	  echo "  (emacsclient not found -- open it yourself)"; \
+	elif ! $(EMACSCLIENT) -e t >/dev/null 2>&1; then \
+	  echo "  (no Emacs daemon running -- open it yourself)"; \
+	elif [ "$$($(EMACSCLIENT) -e '(length (visible-frame-list))' 2>/dev/null)" = "0" ]; then \
+	  $(EMACSCLIENT) -c -e '(load "$(CURDIR)/scripts/new-post-scratch.el")' >/dev/null && \
+	    echo "  opened scratch buffer in a new Emacs frame"; \
+	else \
+	  $(EMACSCLIENT) -e '(load "$(CURDIR)/scripts/new-post-scratch.el")' >/dev/null && \
+	    echo "  opened scratch buffer in the running Emacs"; \
+	fi
 
 hooks: ## Enable the repo's git hooks (.githooks/) for this clone
 	@git config core.hooksPath .githooks
