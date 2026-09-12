@@ -40,29 +40,19 @@ Org-mode aficionados can skip this section. They already know why Org mode in Em
     Somehow, it always felt awkward to have to patch Emacs to edit notes written for an editor I hardly ever use.
 -   **Obsidian is closed source, so extending it is reverse engineering.** I wrote two plugins in the past, one to import attachments ([link](https://github.com/alberti42/obsidian-import-attachments-plus)) and one to annotate _why_ I had installed plugins _X_, _Y_ and _Z_ ([link](https://github.com/alberti42/obsidian-plugins-annotations)). Before LLMs became so advanced, maintaining them was a serious undertaking, and they would break with every update to Obsidian's internal, undocumented functions. I should admit that, with recent LLMs, repairs went from taking "a couple of weekends" to only "60 minutes." However, I still don't want my notes to depend on my ability to reverse engineer someone's private API.
 -   **It is getting more commercial.** I have nothing against people earning a living from software. However, I do mind installing a plugin advertised as free and discovering that free meant the first 15 days only.
--   **The hidden lock-in effect.** Yes, Markdown notes can be read and edited by any editor. However, the more I used Obsidian, the more locked in I felt. As I mentioned, Obsidian's own Markdown dialect makes it difficult to edit notes in other editors. Additionally, built-in features like Canvas and third-party plugins like [PDF++](https://github.com/RyotaUshio/obsidian-pdf-plus) and [Dataview](https://github.com/blacksmithgu/obsidian-dataview) make some of your notes completely unreadable without them. Don't get me wrong; these are genuinely good plugins. However, as one starts relying on them, it becomes more difficult to migrate to anything else. I have experienced too many times before that notes stored in other PKB apps later became of little use (or, when exported, became poorly formatted and difficult to reuse). I want my notes to stay readable for as long as possible. I trust Org mode and Emacs to be around for many years to come. I am not equally confident that PDF++ will open my paper annotations in five years.
+-   **The hidden lock-in effect.** Yes, Markdown notes can be read and edited by any editor. However, the more I used Obsidian, the more locked in I felt. As I mentioned, Obsidian's own Markdown dialect makes it difficult to edit notes in other editors. Additionally, built-in features like Canvas and third-party plugins like [PDF++](https://github.com/RyotaUshio/obsidian-pdf-plus) and [Dataview](https://github.com/blacksmithgu/obsidian-dataview) make some of your notes completely unreadable without them. Don't get me wrong; these are genuinely good plugins. However, as one starts relying on them, it becomes more difficult to migrate to anything else. I have experienced too many times before that notes stored in other PKB apps later became of little use (or, when exported, became poorly formatted and difficult to reuse). My notes should stay readable for as long as possible. I trust Org mode and Emacs to be around for many years to come. Instead, I am not equally confident that PDF++ will open my paper annotations in five years.
 -   **It uses a proprietary Markdown dialect.** I already mentioned Wikilinks, which only work inside Obsidian and break when another editor opens the file. There's more. Extending the Markdown format is not simple. You can't just write an "advice" like in Emacs to add functionalities. For example, I have always wanted to use the square-bracket [LaTeX delimiters](https://tex.stackexchange.com/a/410874/66372) `\[` and `\]` for display equations and `\(` and `\)` for inline equations, instead of the traditional TeX alternative based on dollars `$`. As of today, this is not possible.
 
 Conversely, Org mode does not have these limitations. The following comes to mind as something missing in Markdown:
 
 -   There is not a plurality of dialects, just a single, canonical Org syntax that will likely be supported for many years to come. Luckily (or sadly, depending on your point of view), Emacs Org mode will likely outlive us all (except for Bryan Johnson 😅).
--   Key-value data as provided by [description list items](https://orgmode.org/manual/Plain-Lists.html).
+-   Key-value data, as provided by [description list items](https://orgmode.org/manual/Plain-Lists.html).
 -   Much better support for internal links, including links to numbered figures.
--   A standardized concept for how to handle attachments.
--   Built-in support for TODO and personal agenda
--   There is a recent trend to create more and more applications for editing Org notes outside of Emacs' ecosystem; e.g., take a look at [MobileOrg](https://mobileorg.github.io/documentation/) and [openorg](https://openorg.so/) project.
-
-Other people have already written on the merits of Org format over Markdown; take a look at this [write-up](https://irreal.org/blog/?p=13188).
-
-Key-value data, as provided by description list items in <https://orgmode.org/manual/Plain-Lists.html>.
-Much better support for internal links, including links to numbered figures.
-
 -   A standardized concept for handling attachments.
--   Built-in support for "TODO" and personal agendas
+-   Built-in support for "TODO" and personal agendas.
+-   There is a recent trend to develop more and more applications for editing Org notes outside the Emacs ecosystem. For example, take a look at the [MobileOrg](https://mobileorg.github.io/documentation/), [Orgzly](https://www.orgzly.com/), [beorg](https://www.beorgapp.com/orgmode/), [openorg](https://openorg.so/) and [org-mobile](https://github.com/alsciokat/org-mobile) projects.
 
-There is a recent trend to create more and more applications for editing Org notes outside of the Emacs ecosystem. For example, take a look at the MobileOrg and Openorg projects.
-
-Others have written about the advantages of the Org format over Markdown. Take a look at this write-up.
+Others have written about the advantages of the Org format over Markdown; take a look at this [write-up](https://irreal.org/blog/?p=13188).
 
 
 ## The backbone: vulpea, not org-roam {#the-backbone-vulpea-not-org-roam}
