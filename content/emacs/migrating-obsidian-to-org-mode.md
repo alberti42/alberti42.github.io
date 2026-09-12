@@ -61,7 +61,7 @@ I use [vulpea](https://github.com/d12frosted/vulpea) to index the vault. I looke
 
 Boris Buliga's post is the best statement of that distinction, and it is why I went this way: <https://www.d12frosted.io/posts/2025-11-28-vulpea-v2-breaking-up-with-org-roam>
 
-Thank you, @d12frosted, for vulpea — v2 is exactly the right size of tool.
+Thank you, @d12frosted, for vulpea — v2 is precisely the right size of tool.
 
 Backlinks, incidentally, are a non-issue: vulpea keeps every link with its type and position, so "what links here" is a query, not a feature request.
 
