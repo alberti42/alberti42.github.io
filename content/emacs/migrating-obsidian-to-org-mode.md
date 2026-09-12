@@ -48,9 +48,9 @@ Conversely, Org mode does not have these limitations. The following comes to min
 -   There is not a plurality of dialects, just a single, canonical Org syntax that will likely be supported for many years to come. Luckily (or sadly, depending on your point of view), Emacs Org mode will likely outlive us all (except for Bryan Johnson 😅).
 -   Key-value data, as provided by [description list items](https://orgmode.org/manual/Plain-Lists.html).
 -   Much better support for internal links, including links to numbered figures.
--   A standardized concept for handling attachments.
+-   A standardized concept for handling attachments, with its own `attachment:` link type.
 -   Built-in support for "TODO" and personal agendas.
--   There is a recent trend to develop more and more applications for editing Org notes outside the Emacs ecosystem. For example, take a look at the [MobileOrg](https://mobileorg.github.io/documentation/), [Orgzly](https://www.orgzly.com/), [beorg](https://www.beorgapp.com/orgmode/), [openorg](https://openorg.so/) and [org-mobile](https://github.com/alsciokat/org-mobile) projects.
+-   There is a recent trend to develop more and more applications for editing Org notes outside the Emacs ecosystem. For example, take a look at the [Orgzly Revived](https://github.com/orgzly-revived/orgzly-android-revived), [beorg](https://www.beorgapp.com/orgmode/), [openorg](https://openorg.so/) and [org-mobile](https://github.com/alsciokat/org-mobile) projects. [MobileOrg](https://mobileorg.github.io/documentation/) seems less maintained and I did not check it myself.
 
 Others have written about the advantages of the Org format over Markdown; take a look at this [write-up](https://irreal.org/blog/?p=13188).
 
