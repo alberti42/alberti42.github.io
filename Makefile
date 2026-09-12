@@ -59,7 +59,7 @@ else
 	@test ! -e content-org/$(SECTION)/$(SLUG).org || \
 	  { echo "content-org/$(SECTION)/$(SLUG).org already exists"; exit 1; }
 	@sed -e 's|@TITLE|$(SLUG)|g' \
-	     -e "s|@DATE|$$(date '+<%Y-%m-%d>')|g" \
+	     -e "s|@DATE|$$(date '+<%Y-%m-%d %a>')|g" \
 	     -e 's|@SECTION|$(SECTION)|g' \
 	     -e 's|@SLUG|$(SLUG)|g' \
 	     archetypes/post.org > content-org/$(SECTION)/$(SLUG).org

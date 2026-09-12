@@ -11,7 +11,7 @@
                                (file-name-directory
                                 (or load-file-name buffer-file-name))))
        (template (expand-file-name "archetypes/post.org" root))
-       (date (format-time-string "<%Y-%m-%d>"))
+       (date (format-time-string "<%Y-%m-%d %a>"))
        (buf (generate-new-buffer "*new-post*")))
   (with-current-buffer buf
     (insert-file-contents template)
