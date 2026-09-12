@@ -1,5 +1,5 @@
 #+TITLE: Publishing this site from Org with ox-hugo
-#+DATE: <2026-08-29>
+#+DATE: <2026-08-29 Sat>
 #+DESCRIPTION: How the Org sources in content-org/ become the Markdown that Hugo builds.
 #+HUGO_BASE_DIR: ../..
 #+HUGO_SECTION: emacs
