@@ -13,7 +13,7 @@
 3. I migrated my whole Obsidian setup to org-mode. Here I describe what I did and what I lost.
 #+END_COMMENT
 
-I recently took a couple of weeks of vacation and decided it would be a good time to look into how to migrating my approximately 1,000 Obsidian notes to Emacs [[https://orgmode.org/][Org-mode]]. I had considered doing this for a long time, but I had always hesitated because I was afraid the conversion would be messy and time-consuming and would prevent me from reproducing my established workflow. I was wrong. At least partly wrong. The migration took some time (a couple of days of fiddling with Python and Pandoc export scripts), but I was eventually able to recreate my entire Obsidian workflow.
+I recently had a couple of weeks of vacation and decided it was a good time to look into how to migrating my approximately 1,000 Obsidian notes to Emacs [[https://orgmode.org/][Org-mode]]. I had considered doing this for a long time, but I had always hesitated because I was afraid the conversion would be messy and time-consuming and would prevent me from reproducing my established workflow. I was wrong. At least partly wrong. The migration took some time (a couple of days of fiddling with Python and Pandoc export scripts), but I was eventually able to recreate my entire Obsidian workflow.
 
 This note is for people who, like me, have been pondering whether to migrate from Obsidian to Emacs Org-mode for quite some time. Perhaps there are new Emacs users who are feeling hesitant. Hopefully, this note will help you decide, and if you decide to migrate, it will share a few tips about how to organize your vault of notes.
 
@@ -21,13 +21,13 @@ Speaking of vaults. There are many different names for the same concept: brain d
 
 * How my Obsidian setup looked like
 
-First, let me clarify what was in my Obsidian setup and especially *what was not*.
+First, let me clarify what was in my Obsidian setup and *what was not*.
 
 *What it contained:*
 
 - Multiple strictly disjoint vaults (work and private). Other people may also want a shared vault for family, a club, or a common interest, such as role-playing games. The org-mode workflow presented below covers strictly disjoint vaults, too.
 - Notes used a YAML preamble, which included:
-  - UUID :: a unique identifier is not typical in Obsidian vaults, but I have always found it useful for linking from outside Obsidian to a particular note. This ensures that the link remains stable, even if the file is renamed in the future.
+  - UUID :: a unique identifier is not typical in Obsidian vaults, but I have always found it useful for linking from outside Obsidian to a particular Obsidian note; there is a little Obsidian extension linked [[https://github.com/vinzent03/obsidian-advanced-uri][here]] that supported it. This ensured for me that my links remained stable, even when the Markdown files were subsequently renamed.
   - dates :: used to store creation and modification dates without relying on =btime= and =mtime=.
   - tags :: useful for restricting the search criteria when searching for a note.
 - Internal links between notes were [[https://obsidian.md/help/links][Obsidian-flavored wikilinks]]. 
@@ -39,10 +39,11 @@ First, let me clarify what was in my Obsidian setup and especially *what was not
     
 * Why I decided to migrate to org-mode
 
-Okay, Org-mode aficionados don't have to read this section. They already know why Org mode in Emacs is better. But let me spell it out for everyone else, including those with less experience with Org mode.
+Org-mode aficionados can skip this section. They already know why Org mode in Emacs is superior 😄. But for everyone else, let me spell out the reasons that convinced me to move my notes from Obsidian to Emacs.
 
-- *I would rather edit notes in Emacs.* I had Emacs configured to handle the Obsidian Markdown dialect with wikilinks, and it always felt awkward — a dialect bolted onto a dialect, to talk to an editor I was not using.
-- *Obsidian is closed source, so extending it is reverse engineering.* I wrote two plugins in the past, one to import attachments (https://github.com/alberti42/obsidian-import-attachments-plus) and one to annotate /why/ I had installed plugins X, Y and Z (https://github.com/alberti42/obsidian-plugins-annotations). Before LLMs, writing them was a serious project, and they kept breaking on every update. I will admit that with Claude the repairs recently went from "a couple of weekends" to "30 minutes" — but I still do not want my notes to depend on my ability to reverse-engineer someone's private API.
+- *I would rather edit notes in Emacs.* Emacs is my daily driver for anything I can do with a text editor. There was always friction when I had to copy and paste content from Emacs into Obsidian. Although I could use Emacs to directly edit Obsidian notes, I had to install an "advice" in Emacs, =markdown-ts-mode=, to handle the Obsidian Markdown dialect, especially the wikilinks.
+  Somehow, it always felt awkward to have to patch Emacs to edit notes written for an editor I hardly ever use.
+- *Obsidian is closed source, so extending it is reverse engineering.* I wrote two plugins in the past, one to import attachments ([[https://github.com/alberti42/obsidian-import-attachments-plus][link]]) and one to annotate /why/ I had installed plugins /X/, /Y/ and /Z/ ([[https://github.com/alberti42/obsidian-plugins-annotations][link]]). Before LLMs became so advanced, maintaining them was a serious undertaking, and they would break with every update to Obsidian's internal, undocumented functions. I should admit that, with recent LLMs, repairs went from taking "a couple of weekends" to only "60 minutes." However, I still don't want my notes to depend on my ability to reverse engineer someone's private API.
 - *It is getting more commercial.* I have nothing against people earning a living from software. I do mind installing a plugin advertised as free and discovering that free meant the first 15 days.
 - *The lock-in is by design.* Canvas, PDF++, Dataview are genuinely good plugins, and every one of them makes some of your notes unreadable without it. My notes have to stay readable for as long as I can foresee. I trust org-mode and Emacs to be here (honestly, I expect Emacs to outlive all of us); I am not equally confident that PDF++ will open my paper annotations in five years.
 - *It is not plain Markdown.* Wikilinks work better than plain Markdown links inside Obsidian, and break the moment another editor opens the file.
