@@ -26,9 +26,14 @@ items:
     ranking: 1
     disabled: true   # hidden from /projects/; flip to false to publish
 
+  - title: SyncGlass
+    link: https://github.com/alberti42/SyncGlass
+    description: A menu-bar app for macOS that shows which files iCloud Drive is uploading and downloading. It lists iCloud Drive's transfers in one place — how many files are in flight, each file's percentage, and when each transfer finished — and can notify you when uploads or downloads finish. Signed and notarized; requires macOS 26 or later.
+    ranking: 1
+
   - title: Volume Control App
     link: https://github.com/alberti42/Volume-Control
-    description: This app allows you to directly control the volume of Apple Music and of Spotify using `volume-up` and `volume-down` keys from your keyboard.
+    description: Control the volume of Apple Music, Spotify, Doppler, Swinsian, and your display with your keyboard's volume keys. When one of these players is playing, the volume keys change its volume; otherwise, they change the system volume. AirPlay speakers follow the music app's volume, not the Mac's system volume, so this is the way to set their volume from the keyboard. Display volume goes through [BetterDisplay](https://github.com/waydabber/BetterDisplay) or [Lunar](https://github.com/alin23/Lunar). Notarized; supports Ventura and newer, and installs with `brew install --cask volume-control`.
     ranking: 1
 
   - title: iTunes Volume Control

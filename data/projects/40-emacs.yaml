@@ -39,6 +39,10 @@ items:
     link: https://github.com/alberti42/org-semantic
     description: Search a tree of org-mode notes by meaning or by words. One static binary, no database, no Python. It runs as a one-shot command, or stays resident for Emacs — over a pipe, never a port.
 
+  - title: pretty-tables.el
+    link: https://github.com/alberti42/pretty-tables.el
+    description: Draws the tables of Org and Markdown (`markdown-ts-mode`) buffers with aligned, wrapped columns, without modifying the buffer text. When a table is wider than `pretty-tables-width` (by default `fill-column`), the widest columns are narrowed and their cells are word-wrapped onto several screen lines. It supports equations rendered by [latex-to-svg](https://github.com/alberti42/latex-to-svg).
+
   - title: straight-overview
     link: https://github.com/alberti42/straight-overview
     description: |-
