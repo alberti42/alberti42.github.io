@@ -26,6 +26,11 @@ items:
     ranking: 1
     disabled: true   # hidden from /projects/; flip to false to publish
 
+  - title: SpaceJumper
+    link: https://github.com/alberti42/SpaceJumper
+    description: A menu-bar app for macOS that switches between Spaces without the slide animation, or with a slide as long as you choose. macOS has no setting to turn off the animation that plays when you switch Spaces; "Reduce motion" replaces the slide with a cross-fade, which is still an animation. SpaceJumper switches on keyboard shortcuts and trackpad swipes, and its menu-bar item shows the number of the current desktop. Signed and notarized; requires macOS 26 or later.
+    ranking: 1
+
   - title: SyncGlass
     link: https://github.com/alberti42/SyncGlass
     description: A menu-bar app for macOS that shows which files iCloud Drive is uploading and downloading. It lists iCloud Drive's transfers in one place — how many files are in flight, each file's percentage, and when each transfer finished — and can notify you when uploads or downloads finish. Signed and notarized; requires macOS 26 or later.
