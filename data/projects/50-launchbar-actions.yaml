@@ -10,6 +10,10 @@ items:
     link: https://github.com/alberti42/Get-Recent-Adobe-Documents-For-LaunchBar
     description: A plugin for LaunchBar to display the list of the documents recently opened with the Adobe programs [Acrobat](https://www.adobe.com/acrobat.html), [Photoshop](https://www.adobe.com/products/photoshop.html), [Illustrator](https://www.adobe.com/products/illustrator.html).
 
+  - title: Get Recent ArtCraft Documents
+    link: https://github.com/alberti42/Get-Recent-ArtCraft-Documents-For-LaunchBar
+    description: A plugin for LaunchBar to display the list of the documents recently opened with the ArtCraft programs [WordCraft](https://github.com/storytold/wordcraft), [DeckCraft](https://github.com/storytold/deckcraft), [PdfCraft](https://github.com/storytold/pdfcraft), [VectorCraft](https://github.com/storytold/vectorcraft), [PhotoCraft](https://github.com/storytold/photocraft), [SolidCraft](https://github.com/tangency-labs/solidcraft), and [CADCraft](https://github.com/storytold/cadcraft).
+
   - title: Get Recent MATLAB Documents
     link: https://github.com/alberti42/Get-Recent-MATLAB-Documents-For-LaunchBar
     description: A plugin for LaunchBar to display the list of the documents recently opened with [Mathworks MATLAB](https://www.mathworks.com/).
